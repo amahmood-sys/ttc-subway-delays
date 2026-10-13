@@ -8,5 +8,9 @@ env/
 # Streamlit secrets — never commit real credentials
 .streamlit/secrets.toml
 
+# Local data backups made by download_data.py / auto-update jobs
+data/backups/
+*.pre-update
+
 # OS
 .DS_Store
