@@ -108,7 +108,7 @@ def load_code_map(resources: list) -> dict:
 def _fix_mojibake(text: str) -> str:
     """The Open Data code table has double-encoded UTF-8 (e.g. 'â' for an en dash)."""
     try:
-        text = text.encode("cp1252").decode("utf-8")
+        text = text.encode("latin-1").decode("utf-8")
     except (UnicodeEncodeError, UnicodeDecodeError):
         pass
     return text.replace("\u2013", "-").replace("\u2014", "-")
